@@ -1,0 +1,28 @@
+<div mat-dialog-title>
+  <h1>Product Form</h1>
+</div>
+<form [formGroup]="prodForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Name product" formControlName="Name">
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Description" formControlName="Description">
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Enter Price" type="money" formControlName="Price">
+        <mat-hint>In Soles Peruvians</mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+  </div>
+</form>
